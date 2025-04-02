@@ -6,7 +6,13 @@ export default function App() {
             {/* Navbar */}
             <header className="sticky top-0 bg-white z-50 border-b shadow-sm">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                    <div className="text-2xl font-bold tracking-tight">kendi.ai</div>
+                    <div className="flex items-center space-x-2">
+                        <img src="/kendi-ai-logo.svg" alt="kendi.ai logo" className="h-8" />
+                        <div className="text-2xl tracking-tight" style={{ fontFamily: "'Changa', sans-serif" }}>
+                            kendi.ai
+                        </div>
+                    </div>
+
                     <nav className="hidden md:flex space-x-8 text-sm font-medium">
                         <a href="#technology" className="hover:text-gray-700 transition">Technology</a>
                         <a href="#applications" className="hover:text-gray-700 transition">Applications</a>
