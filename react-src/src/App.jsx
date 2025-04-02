@@ -1,123 +1,120 @@
 import React from "react";
 
-function App() {
+export default function App() {
     return (
-        <main className="min-h-screen bg-white text-gray-900 p-6 space-y-20">
+        <main className="min-h-screen bg-gradient-to-b from-white to-gray-100 font-sans text-gray-900">
+            {/* Navbar */}
+            <header className="sticky top-0 bg-white z-50 border-b shadow-sm">
+                <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                    <div className="text-2xl font-bold tracking-tight">kendi.ai</div>
+                    <nav className="hidden md:flex space-x-8 text-sm font-medium">
+                        <a href="#technology" className="hover:text-gray-700 transition">Technology</a>
+                        <a href="#applications" className="hover:text-gray-700 transition">Applications</a>
+                        <a href="#team" className="hover:text-gray-700 transition">Team</a>
+                        <a href="#contact" className="hover:text-gray-700 transition">Contact</a>
+                    </nav>
+                </div>
+            </header>
+
             {/* Hero Section */}
-            <section className="text-center space-y-6 pt-10">
-                <h1 className="text-5xl font-bold">
-                    Intelligent Autonomy Starts With Understanding
-                </h1>
-                <p className="text-xl max-w-2xl mx-auto">
-                    Kendi.ai is building the next-generation scene understanding engine for
-                    autonomous vehicles—powered by multi-sensor fusion, deep learning, and
-                    vision-language models.
-                </p>
-                <div className="space-x-4">
-                    <button className="rounded-2xl shadow py-2 px-4 font-semibold border border-transparent bg-gray-900 text-white hover:bg-gray-700">
-                        Learn More
-                    </button>
-                    <button className="rounded-2xl shadow py-2 px-4 font-semibold border bg-white text-gray-900 hover:bg-gray-50">
-                        Contact Us
-                    </button>
+            <section className="max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                        Understanding the Road.
+                        <br /> Powering Autonomy.
+                    </h1>
+                    <p className="text-lg text-gray-600 mt-6 max-w-xl">
+                        kendi.ai builds intelligent perception systems for autonomous vehicles using cutting-edge AI and sensor fusion — from camera to language.
+                    </p>
+                    <div className="mt-8 space-x-4">
+                        <button className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
+                            Explore the Tech
+                        </button>
+                        <button className="px-6 py-3 border border-gray-300 text-gray-800 rounded-full font-medium hover:bg-gray-100 transition">
+                            Get in Touch
+                        </button>
+                    </div>
+                </div>
+                <div className="hidden md:flex justify-center">
+                    <div className="w-80 h-80 rounded-full bg-gradient-to-tr from-gray-800 via-black to-gray-700 blur-2xl opacity-20"></div>
                 </div>
             </section>
 
             {/* What We Do */}
-            <section className="max-w-5xl mx-auto space-y-4">
-                <h2 className="text-3xl font-semibold">
-                    Driving Autonomy with World-Class Scene Understanding
-                </h2>
-                <p>
-                    We use sensor data—cameras, LiDAR, IMUs, and SD maps with navigation info—to
-                    generate a comprehensive, real-time description of the driving scene.
+            <section id="technology" className="max-w-7xl mx-auto px-6 py-24">
+                <h2 className="text-3xl font-semibold mb-6">What We Do</h2>
+                <p className="text-gray-600 max-w-2xl mb-8">
+                    We turn raw sensor streams into deep, structured scene understanding. Our models describe everything from lanes and signs to road users, intent, and environmental conditions.
                 </p>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Other road users (vehicles, pedestrians, cyclists)</li>
-                    <li>Obstacles, potholes, speedbumps</li>
-                    <li>Lanes, drivable areas, road types</li>
-                    <li>Traffic lights, signs, road signals</li>
-                    <li>Weather and sound understanding</li>
-                    <li>Future trajectory prediction for all agents</li>
-                </ul>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <Feature text="Object detection: vehicles, pedestrians, VRUs" />
+                    <Feature text="Obstacle and surface anomaly detection" />
+                    <Feature text="Drivable area, road type, lane estimation" />
+                    <Feature text="Traffic light/sign recognition and localization" />
+                    <Feature text="Weather and ambient sound scene understanding" />
+                    <Feature text="Future trajectory forecasting for dynamic agents" />
+                </div>
             </section>
 
-            {/* Why It Matters */}
-            <section className="bg-gray-100 p-10 rounded-2xl max-w-5xl mx-auto">
-                <h2 className="text-3xl font-semibold mb-4">
-                    Autonomy Begins With Perception
-                </h2>
-                <p>
-                    We focus on the most critical component of autonomy—scene understanding.
-                    With limited resources, full-stack autonomy is inefficient. Our system
-                    leverages widely available SD maps and real-time sensor data to enable
-                    scalable deployment.
+            {/* Technology Highlights */}
+            <section className="bg-white py-24" id="applications">
+                <div className="max-w-7xl mx-auto px-6">
+                    <h2 className="text-3xl font-semibold mb-6">Built for Scalable Autonomy</h2>
+                    <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+                        <Feature text="Multi-modal sensor fusion: camera, LiDAR, IMU, SD maps" />
+                        <Feature text="Vision-language models for rich, explainable perception" />
+                        <Feature text="Real-time deployment on NVIDIA Thor automotive-grade ECUs" />
+                        <Feature text="Modular API for downstream planning and ADAS integration" />
+                        <Feature text="Scene graphs, behavioral intent modeling, and prediction" />
+                        <Feature text="Semantic logs and natural-language driving summaries" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Applications */}
+            <section className="bg-gray-50 py-24" id="team">
+                <div className="max-w-7xl mx-auto px-6">
+                    <h2 className="text-3xl font-semibold mb-6">Where It Works</h2>
+                    <div className="grid sm:grid-cols-2 gap-6 text-gray-700">
+                        <Feature text="Autonomous delivery fleets" />
+                        <Feature text="ADAS for passenger vehicles and commercial trucks" />
+                        <Feature text="Autonomous shuttles and last-mile transport" />
+                        <Feature text="Robots, drones, and infrastructure perception" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Team */}
+            <section className="py-24 max-w-7xl mx-auto px-6">
+                <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
+                <p className="text-gray-600 max-w-2xl">
+                    We’re a small, focused team of engineers and researchers building the foundation of safe autonomy. We believe deep semantic understanding — not just more sensors — is the key to unlocking trust, explainability, and generalization in autonomous driving.
                 </p>
-            </section>
-
-            {/* Technology */}
-            <section className="max-w-5xl mx-auto space-y-4">
-                <h2 className="text-3xl font-semibold">Our Technology</h2>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Multi-sensor fusion: camera, LiDAR, IMU, SD maps</li>
-                    <li>End-to-end deep learning on NVIDIA Thor ECU</li>
-                    <li>Joint perception &amp; prediction of agent behaviors</li>
-                    <li>Vision-language models for rich scene descriptions</li>
-                    <li>Scene graphs, semantic tagging, anomaly detection</li>
-                    <li>Natural language explainability for logs &amp; compliance</li>
-                </ul>
-            </section>
-
-            {/* Use Cases */}
-            <section className="bg-gray-100 p-10 rounded-2xl max-w-5xl mx-auto space-y-4">
-                <h2 className="text-3xl font-semibold">Applications</h2>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>Autonomous delivery fleets</li>
-                    <li>ADAS for urban and highway driving</li>
-                    <li>Autonomous shuttles and last-mile mobility</li>
-                    <li>Robotics, drones, and smart city infrastructure</li>
-                </ul>
-            </section>
-
-            {/* Team Section */}
-            <section className="max-w-5xl mx-auto space-y-4">
-                <h2 className="text-3xl font-semibold">Who We Are</h2>
-                <p>
-                    We&apos;re a small, driven team of engineers and researchers focused on
-                    enabling safe autonomy through smarter perception. We believe deep
-                    understanding, not more sensors or compute, is the key to reliable
-                    autonomy.
-                </p>
-                <div className="space-x-4">
-                    <button className="rounded-2xl shadow py-2 px-4 font-semibold border border-transparent bg-gray-900 text-white hover:bg-gray-700">
-                        Join Us
+                <div className="mt-8 space-x-4">
+                    <button className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
+                        Join the Team
                     </button>
-                    <button className="rounded-2xl shadow py-2 px-4 font-semibold border bg-white text-gray-900 hover:bg-gray-50">
+                    <button className="px-6 py-3 border border-gray-300 text-gray-800 rounded-full font-medium hover:bg-gray-100 transition">
                         Partner With Us
                     </button>
                 </div>
             </section>
 
-            {/* Contact */}
-            <section className="text-center space-y-2 pt-10">
-                <h2 className="text-2xl font-semibold">Let’s Connect</h2>
+            {/* Footer */}
+            <footer className="text-center text-sm text-gray-500 py-12 border-t" id="contact">
                 <p>
-                    Reach out at{" "}
-                    <a href="mailto:hello@kendi.ai" className="text-blue-600 underline">
-                        hello@kendi.ai
-                    </a>
+                    Get in touch: <a href="mailto:hello@kendi.ai" className="text-gray-700 underline">hello@kendi.ai</a>
                 </p>
-                <div className="space-x-4">
-                    <a href="#" className="text-blue-600 underline">
-                        LinkedIn
-                    </a>
-                    <a href="#" className="text-blue-600 underline">
-                        GitHub
-                    </a>
-                </div>
-            </section>
+                <p className="mt-2">&copy; {new Date().getFullYear()} kendi.ai — All rights reserved</p>
+            </footer>
         </main>
     );
 }
 
-export default App;
+function Feature({ text }) {
+    return (
+        <div className="p-5 bg-white rounded-xl shadow hover:shadow-md transition border border-gray-200">
+            <p className="text-sm font-medium text-gray-800">{text}</p>
+        </div>
+    );
+}
